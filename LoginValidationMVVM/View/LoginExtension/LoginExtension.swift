@@ -16,10 +16,8 @@ extension LoginViewController : LoginViewModelDelagte
             let vc = self.storyboard?.instantiateViewController(withIdentifier:"EmployeeID") as! EmployeeViewController
             self.navigationController?.pushViewController(vc, animated: true)
             
-            
            }else if (LoginReponse.error != nil)
            {
-               
                let alert = UIAlertController (title: "", message: "Wrong", preferredStyle: .alert)
                alert.addAction(UIAlertAction(title: "Action", style: .default, handler: nil))
                self.present(alert, animated: false, completion: nil)

@@ -9,7 +9,6 @@
 import Foundation
 
 struct UserDefaultUtitlty {
-    
     func saveUserID(UserID:Int) -> Void {
         UserDefaults.standard.set(UserID, forKey: "UserID")
     }

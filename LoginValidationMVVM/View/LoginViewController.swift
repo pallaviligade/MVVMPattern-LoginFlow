@@ -22,7 +22,7 @@ class LoginViewController: UIViewController {
     @IBAction func didTapLoginButton(_ sender: Any)
     {
      
-        UserTextFeild.text = "codecat15gmail.com"
+        UserTextFeild.text = "pallavi0204@gmail.com"
         PasswordTextFeild.text = "1234"
         let request = LoginRequest(userEmail:UserTextFeild.text!, userPassword: PasswordTextFeild.text!)
         loginViewModel.LoginUser(Request: request)

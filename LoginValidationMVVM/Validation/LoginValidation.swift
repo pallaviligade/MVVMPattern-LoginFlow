@@ -33,31 +33,23 @@ struct  EmailPropertyWrapper {
         let predicate = NSPredicate(format: "SELF MATCHES %@", regex)
         return predicate.evaluate(with: emailID)
     }
-
-    
 }
 
 struct LoginValidation{
    @EmailPropertyWrapper var email : String
     var password : String
-    
     func CheckUser(LoginRequest:LoginRequest) -> ValidationResult
     {
         return  LoginValidation(LoginRequest: LoginRequest)
         
     }
  private func LoginValidation(LoginRequest:LoginRequest) ->  ValidationResult {
-        
-        
         if (LoginRequest.userPassword.isEmpty) {
             return ValidationResult(Sucess: false, error: "isEmpty")
         }
-      
         else if (email.isEmpty || email == ""){
             return ValidationResult(Sucess: false, error: "Not a valid")
-
     }
-        
         return ValidationResult(Sucess: true, error: "Good")
 }
 }

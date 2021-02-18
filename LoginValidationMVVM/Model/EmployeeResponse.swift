@@ -5,9 +5,6 @@
 //  Created by Pallavi on 14/02/21.
 //  Copyright © 2021 Pallavi. All rights reserved.
 //
-
-
-
 struct EmployeeResponse : Decodable
 {
     let errorMessage: String?

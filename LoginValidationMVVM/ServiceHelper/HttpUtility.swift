@@ -9,14 +9,12 @@
 import Foundation
 
 struct  HttpUtility{
-    
     func getPostData<T:Decodable>(RequestUrl:URL,PostBody:Data,ResultType:T.Type,ComplicationHandler:@escaping(_ result:T?) -> Void) {
         
         var requestURL = URLRequest(url: RequestUrl)
         requestURL.httpBody = PostBody
         requestURL.httpMethod = "Post"
         requestURL.addValue("application/json", forHTTPHeaderField: "content-type")
-        
         
         URLSession.shared.dataTask(with: requestURL) { (Data, HttpResponse, error) in
             if error == nil && HttpResponse != nil
@@ -39,19 +37,13 @@ struct  HttpUtility{
             
             if (Error == nil && ResponseData != nil){
             let decoder = JSONDecoder ()
-                
                 do {
                     let result = try decoder.decode(T.self, from: ResponseData!)
                     ComplicationHandler(result)
                 } catch  {
                     debugPrint(error)
                 }
-                
             }
-            
-            
         }.resume()
-        
     }
-    
 }

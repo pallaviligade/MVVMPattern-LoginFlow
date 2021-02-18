@@ -18,8 +18,6 @@ struct  LoginDataResource{
         print(loginRequest.self)
         do {
             let loginPostBody = try JSONEncoder().encode(loginRequest)
-
-          //  let dataBody = try JSONEncoder().encode(loginRequest)
             httpUtility.getPostData(RequestUrl: loginUrl, PostBody: loginPostBody, ResultType: LoginResponse.self) { (LoginResponseApi) in
                 complicationHandler(LoginResponseApi!)
             }

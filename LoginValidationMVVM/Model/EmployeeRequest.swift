@@ -7,7 +7,6 @@
 //
 
 import Foundation
-
 @propertyWrapper
 struct DepartmentPropertyWrapper {
     private var _value: String
@@ -27,8 +26,6 @@ struct DepartmentPropertyWrapper {
         _value = _index
     }
 }
-
-
 struct EmployeeRequest
 {
     var UserID:Int
